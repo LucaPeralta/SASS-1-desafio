@@ -1,0 +1,100 @@
+@import"header";
+@import"titulo";
+@import"footer";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: aliceblue;
+}
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+
+
+ .Grid-explicit{
+    justify-content: space-evenly;
+     display: grid;
+ grid-area: auto;
+ 
+       .GridColum{
+    display: grid;
+    grid-template-columns: 50% 100px 1fr;
+                }    }
+
+
+
+    
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;}
+
+.contenedor{
+    display: flex;
+    justify-content: space-evenly;
+}    
+.sobre-nosotros .contenido-textos{
+    width: 48%;}
+
+
+img {
+    grid-area: imagen-about-us;
+    padding: 10px 10px;
+    margin: 0px 40px 20px 20px;
+    &:hover {
+        width: 550px;
+        height: 420px;
+        border-color: black;}
+    }
+.imagen-about-us {
+    border: black solid;
+    width: 500px;
+    height: 370px;
+    transition: linear 0.8s;            /*transiciones*/
+}    
+
+@import"footer";
+
+@media screen and (max-width: 900px) {
+    header{
+        background-position: center;
+
+    }
+    .contenedor-sobre-nosotros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .sobre-nosotros .GridColums{
+        width: 90%;
+
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    nav{text-align: center; 
+   padding: 30px 0 0;
+   a{
+    margin-right: 5px;
+}}
+   .textos-header h1{
+       font-size: 35px;
+   }
+    .textos-header h2{
+        font-size: 20px;
+    }
+    
+}
+
