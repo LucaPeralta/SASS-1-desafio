@@ -2,12 +2,15 @@ header {
   width: 100%; }
   header .textos-header {
     display: flex;
+    /*map get*/
     height: 430px;
     width: 100%;
-    align-items: center; }
+    align-items: center;
+    /*map get*/ }
 
 nav {
   text-align: center;
+  /*map get*/
   padding: 30px 50px 0 0;
   font-weight: 300;
   text-decoration: none;
@@ -15,34 +18,34 @@ nav {
 
 .textos-header h1 {
   display: flex;
-  justify-content: space-around;
+  /*map get*/
   align-items: center;
+  /*map get*/
+  justify-content: space-around;
   font-size: 50px;
   color: black; }
 
 .textos-header h2 {
   display: flex;
-  justify-content: space-around;
-  font-size: 30px;
+  /*map get*/
   font-weight: 300;
-  color: rgba(4, 0, 0, 0.842); }
+  justify-content: space-around;
+  font-size: 50px;
+  color: black;
+  /*MIXIN*/ }
 
-.transition1 {
+.transition1, .transition2 {
   transition: all 0.5s ease;
   background: aliceblue;
   padding: 10px; }
-  .transition1:hover {
+  .transition1:hover, .transition2:hover {
     background: #ee9c9c;
+    /*map get*/
     padding: 20px; }
 
 .transition2 {
-  transition: all 0.5s ease;
-  background: aliceblue;
-  padding: 10px;
+  /*EXTEND*/
   transition: background 0.2s ease, padding 0.8s ease-in-out; }
-  .transition2:hover {
-    background: #ee9c9c;
-    padding: 20px; }
 
 .titulo {
   font-size: 25px;
@@ -52,19 +55,21 @@ nav {
   .titulo:hover {
     grid-area: titulo;
     padding: 10px 10px;
-    margin: 0px 40px 20px 20px;
-    background: #ee9c9c; }
+    margin: 0px 40px 20px 20px; }
 
 footer {
   background: #414141;
   padding: 60px 0 30px 0;
   margin: auto;
+  /*map get*/
   overflow: hidden; }
   footer .contenedor-footer {
     display: flex;
+    /*map get*/
     width: 90%;
     justify-content: space-evenly;
     margin: auto;
+    /*map get*/
     padding-bottom: 50px;
     border-bottom: 1px solid #ccc; }
 
@@ -81,23 +86,26 @@ body {
   width: 90%;
   max-width: 1000px;
   margin: auto;
+  /*map get*/
   overflow: hidden; }
 
 .Grid-explicit {
   justify-content: space-evenly;
   display: grid;
+  /*map get*/
   grid-area: auto; }
   .Grid-explicit .GridColum {
     display: grid;
+    /*map get*/
     grid-template-columns: 50% 100px 1fr; }
 
-.contenedor-sobre-nosotros {
+.contenedor-sobre-nosotros, .contenedor {
   display: flex;
+  /*map get*/
   justify-content: space-evenly; }
 
 .contenedor {
-  display: flex;
-  justify-content: space-evenly; }
+  /*EXTEND*/ }
 
 .sobre-nosotros .contenido-textos {
   width: 48%; }
@@ -118,32 +126,23 @@ img {
   transition: linear 0.8s;
   /*transiciones*/ }
 
-footer {
-  background: #414141;
-  padding: 60px 0 30px 0;
-  margin: auto;
-  overflow: hidden; }
-  footer .contenedor-footer {
-    display: flex;
-    width: 90%;
-    justify-content: space-evenly;
-    margin: auto;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #ccc; }
-
 @media screen and (max-width: 900px) {
   header {
-    background-position: center; }
-  .contenedor-sobre-nosotros {
+    background-position: center;
+    /*map get*/ }
+  .contenedor-sobre-nosotros, .contenedor {
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    /*map get*/
+    align-items: center;
+    /*map get*/ }
   .sobre-nosotros .GridColums {
     width: 90%; } }
 
 @media screen and (max-width: 500px) {
   nav {
     text-align: center;
+    /*map get*/
     padding: 30px 0 0; }
     nav a {
       margin-right: 5px; }

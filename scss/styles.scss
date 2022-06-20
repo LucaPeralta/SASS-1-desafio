@@ -1,6 +1,30 @@
+$estilos: (
+ display: flex,
+ margin: auto,
+ disPlay: grid,
+ background: #ee9c9c,
+ centro: center,
+);
+
+$display: map-get($estilos, display);
+$margin: map-get($estilos, margin);
+$disPlay: map-get($estilos, disPlay);
+$background: map-get($estilos, background);
+$centro:map-get($estilos, centro);
+
+@mixin justify-font-color{
+    justify-content: space-around;
+    font-size: 50px;
+    color: black;
+
+}
+
+
+
 @import"header";
 @import"titulo";
 @import"footer";
+
 
 *{
     margin: 0;
@@ -15,7 +39,7 @@ body{
     padding: 60px 0;
     width: 90%;
     max-width: 1000px;
-    margin: auto;
+    margin: $margin; /*map get*/
     overflow: hidden;
 
 }
@@ -24,11 +48,11 @@ body{
 
  .Grid-explicit{
     justify-content: space-evenly;
-     display: grid;
+     display: $disPlay; /*map get*/
  grid-area: auto;
  
        .GridColum{
-    display: grid;
+    display: $disPlay;/*map get*/
     grid-template-columns: 50% 100px 1fr;
                 }    }
 
@@ -36,12 +60,11 @@ body{
 
     
 .contenedor-sobre-nosotros{
-    display: flex;
+    display: $display; /*map get*/
     justify-content: space-evenly;}
 
 .contenedor{
-    display: flex;
-    justify-content: space-evenly;
+    @extend .contenedor-sobre-nosotros; /*EXTEND*/
 }    
 .sobre-nosotros .contenido-textos{
     width: 48%;}
@@ -63,17 +86,17 @@ img {
     transition: linear 0.8s;            /*transiciones*/
 }    
 
-@import"footer";
+
 
 @media screen and (max-width: 900px) {
     header{
-        background-position: center;
+        background-position: map-get($estilos, centro); /*map get*/
 
     }
     .contenedor-sobre-nosotros{
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: map-get($estilos, centro); /*map get*/
+        align-items: map-get($estilos, centro); /*map get*/
 
     }
     .sobre-nosotros .GridColums{
@@ -84,7 +107,7 @@ img {
 
 
 @media screen and (max-width:500px) {
-    nav{text-align: center; 
+    nav{text-align: map-get($estilos, centro);  /*map get*/
    padding: 30px 0 0;
    a{
     margin-right: 5px;

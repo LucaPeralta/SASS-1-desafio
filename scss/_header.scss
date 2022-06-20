@@ -1,15 +1,15 @@
 header{
     width: 100%;
     .textos-header{
-        display: flex;
+        display: $display; /*map get*/
         height: 430px;
         width: 100%;
-    align-items: center;
+    align-items: map-get($estilos, centro); /*map get*/
      }
 }
 
 nav {
-    text-align: center;
+    text-align: map-get($estilos, centro); /*map get*/
     padding: 30px 50px 0 0;
     font-weight: 300;
     text-decoration: none;
@@ -17,36 +17,26 @@ nav {
     
 }
 .textos-header h1{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 50px;
-    
-color: black; 
+    display: $display; /*map get*/   
+    align-items: map-get($estilos, centro); /*map get*/
+    @include justify-font-color
 }
 .textos-header h2{
-    display: flex;
-    justify-content: space-around;
-    font-size: 30px;
+    display: $display; /*map get*/
     font-weight: 300;
-    color: rgba(4, 0, 0, 0.842);}
+    @include justify-font-color     /*MIXIN*/
+}
 
  .transition1 {
      transition: all 0.5s ease;
      background: aliceblue;
      padding: 10px;
      &:hover {
-        background: #ee9c9c;
+        background: $background; /*map get*/
         padding: 20px;
     }}   
 
  .transition2 {
-    transition: all 0.5s ease;
-    background: aliceblue;
-    padding: 10px;
-    transition: background 0.2s ease, padding 0.8s ease-in-out;
-    &:hover {
-        background: #ee9c9c;
-        padding: 20px;
-    }}
+  @extend .transition1;         /*EXTEND*/
+    transition: background 0.2s ease, padding 0.8s ease-in-out;}
 
